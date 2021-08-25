@@ -12,8 +12,8 @@ namespace Tests
         [Fact]
         public void ClassesAreUnique()
         {
-            var aHuman = new Human();
-            var aHouse = new House();
+            Human aHuman = new Human();
+            House aHouse = new House();
 
             Assert.True(aHouse is House);
             Assert.True(aHuman is Human);
