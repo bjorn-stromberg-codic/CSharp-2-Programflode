@@ -105,11 +105,13 @@ namespace Tests
             {
                 //vi behöver en if() här
 
+                // Man kan lägga inneållet i en variabel
+                char ch = charSerie[index];
+
                 // Detta förändrar innehållet
                 charSerie[index] = 'a';
 
-                // Man kan lägga inneållet i en variabel med
-                char ch = charSerie[index];
+                index += 1;
             }
 
             testString = new string(charSerie);
