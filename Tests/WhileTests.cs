@@ -112,7 +112,7 @@ namespace Tests
                 char ch = charSerie[index];
             }
 
-            testString = charSerie.ToString();
+            testString = new string(charSerie);
             Assert.Equal("hxllo thxrx fxllow human", testString);
         }
     }
