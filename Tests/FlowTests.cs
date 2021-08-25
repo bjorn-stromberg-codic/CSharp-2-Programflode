@@ -45,6 +45,12 @@ namespace Tests
         {
             int zero = 0;
             int notAllowed = 5 / zero;
+
+            int counter = 0;
+            while (counter < int.MaxValue)
+            {
+                counter += 1;
+            }
         }
 
         [Fact]
@@ -72,11 +78,11 @@ namespace Tests
                 
                 if (counter == 3)
                 {
-                    return;
+                    break;
                 }
             }
 
-            Assert.Equal(1, counter);
+            Assert.Equal(3, counter);
         }
     }
 }
