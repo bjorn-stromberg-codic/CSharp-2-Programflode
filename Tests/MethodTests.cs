@@ -9,32 +9,105 @@ namespace Tests
 {
     public class MethodTests
     {
+        // Method Kata 1
         [Fact]
-        public void TwoWaysOfPassingDataToMethod()
+        public void TestIntToChar()
         {
-            string message1 = "Data via klassfält";
-            TwoWays twoWaysDemo = new TwoWays();
-            Assert.NotEqual("You said: Data via klassfält", twoWaysDemo.Echo1());
+            char testCh = IntToChar(65);
+            Assert.Equal('A', testCh);
 
-            twoWaysDemo.Message = message1;
-            Assert.Equal("You said: Data via klassfält", twoWaysDemo.Echo1());
-
-            string message2 = "Data via inparameter";
-            Assert.Equal("You said: Data via inparameter", twoWaysDemo.Echo2(message2));
-        }
-    }
-
-    class TwoWays
-    {
-        public string Message;
-        public string Echo1()
-        {
-            return "You said: " + Message;
+            testCh = IntToChar(122);
+            Assert.Equal('z', testCh);
         }
 
-        public string Echo2(string message)
+        public char IntToChar(int siffra)
         {
-            return "You said: " + message;
+            return ' ';
+        }
+
+        // Method Kata 2
+        [Fact]
+        public void CallMe100_000TimesTest()
+        {
+            Assert.Equal(0, counterCallMe);
+
+            // jobba här
+            
+            Assert.Equal(100_000, counterCallMe);
+        }
+
+        int counterCallMe = 0;
+        public void CallMe()
+        {
+            counterCallMe += 1;
+        }
+
+        // Method Kata 3
+        [Fact]
+        public void MethodChainTest()
+        {
+            Assert.Equal("", lvlOrder);
+
+            // Koppla ihop metoderna så det blir ordningen som nedan
+            MethodLvl1();
+
+            Assert.Equal("lvl1 lvl2 lvl3 lvl4 lvl3 lvl2 lvl1 ", lvlOrder);
+        }
+
+        private string lvlOrder = "";
+        public void MethodLvl1()
+        {
+            lvlOrder += "lvl1 ";
+        }
+        public void MethodLvl2()
+        {
+            lvlOrder += "lvl2 ";
+        }
+        public void MethodLvl3()
+        {
+            lvlOrder += "lvl3 ";
+        }
+        public void MethodLvl4()
+        {
+            lvlOrder += "lvl4";
+        }
+
+        // Method Kata 4
+        [Fact]
+        public void OändligaAnrop()
+        {
+            // sätt A att kalla på B och viseversa
+            // och steppa och se vad som händer :D
+        }
+        public void MethodA()
+        {
+        }
+        public void MethodB()
+        {
+        }
+
+        // Method Kata 5 (denna är en kluring)
+        [Fact]
+        public void RekursivBottleOfBeerTest()
+        {
+            string mySong = OneMoreBottleOfBeer("");
+            Assert.Equal(Data.WholeSong, mySong);
+        }
+
+        string OneMoreBottleOfBeer(string song)
+        {
+            return song;
+        }
+
+        // Method Kata 6 (denna är en kluring)
+        [Fact]
+        public void BottleOfBeerWhileTest()
+        {
+            string mySong = "";
+
+            // en smart whilesats här
+
+            Assert.Equal(Data.WholeSong, mySong);
         }
     }
 }
