@@ -58,18 +58,21 @@ namespace Tests
         public void MethodLvl1()
         {
             lvlOrder += "lvl1 ";
+            lvlOrder += "lvl1 ";
         }
         public void MethodLvl2()
         {
+            lvlOrder += "lvl2 ";
             lvlOrder += "lvl2 ";
         }
         public void MethodLvl3()
         {
             lvlOrder += "lvl3 ";
+            lvlOrder += "lvl3 ";
         }
         public void MethodLvl4()
         {
-            lvlOrder += "lvl4";
+            lvlOrder += "lvl4 ";
         }
 
         // Method Kata 4
